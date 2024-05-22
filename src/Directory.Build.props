@@ -1,0 +1,35 @@
+<Project>
+
+    <PropertyGroup>
+        <RootNamespace>Vurdalakov.AgonTools</RootNamespace>
+        <WarningLevel>4</WarningLevel>
+        <Deterministic>false</Deterministic>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <PublishSingleFile>true</PublishSingleFile>
+        <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+        <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Company>Vurdalakov</Company>
+        <Authors>Vurdalakov</Authors>
+        <Copyright>Copyright (c) 2024 Vurdalakov. All rights reserved.</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <BaseIntermediateOutputPath>$(SolutionDir)..\obj\projects\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+        <BaseOutputPath>$(SolutionDir)..\bin\</BaseOutputPath>
+        <OutputPath>$(BaseOutputPath)$(Configuration)\</OutputPath>
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition="'$(MSBuildProjectExtension)'=='.csproj'">
+            <ItemGroup>
+                <PackageReference Include="StyleCop.Analyzers" Version="*-*" />
+                <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.*" />
+            </ItemGroup>
+        </When>
+    </Choose>
+
+</Project>
